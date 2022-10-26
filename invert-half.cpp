@@ -12,7 +12,7 @@ This program contains a function that inverts the colors only in the right half 
 #include "invert-half.h"
 #include "imageio.h"
 
-// This function inverts all colors, so white shades become black and black shades become white.
+// This function inverts the colors only in the right half of the picture.
 void invertHalf(std::string filename, int image[MAX_H][MAX_W], int &height, int &width)
 {
   for(int r = 0; r < height; r++)
