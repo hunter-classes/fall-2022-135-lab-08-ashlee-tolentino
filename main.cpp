@@ -13,6 +13,7 @@ This program performs changes to the colors/features of a pgm image file.
 #include "invert.h"
 #include "invert-half.h"
 #include "box.h"
+#include "frame.h"
 
 int main()
 {
@@ -54,7 +55,18 @@ int main()
   }
   writeImage("taskC.pgm", out, h, w);
 
-  
+  // Task D
+  readImage(input, img, h, w);
+  frame(input, img, h, w);
+
+  for(int row = 0; row < h; row++) {
+    for(int col = 0; col < w; col++) {
+      out[row][col] = img[row][col];
+    }
+  }
+  writeImage("taskD.pgm", out, h, w);
+
+  //
 
   return 0;
 }
