@@ -15,9 +15,9 @@ This program contains a function that draws a white box exactly in the middle of
 // This function draws a white box exactly in the middle of the picture.
 void box(std::string filename, int image[MAX_H][MAX_W], int &height, int &width)
 {
-  for(int r = height/4; r < height * 0.75; r++)
+  for(int r = height/4; r <= height * 0.75; r++)
   {
-    for(int c = width/4; c < width * 0.75; c++)
+    for(int c = width/4; c <= width * 0.75; c++)
     {
       image[r][c] = 255;
     }
