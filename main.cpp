@@ -14,7 +14,7 @@ This program performs changes to the colors/features of a pgm image file.
 #include "invert-half.h"
 #include "box.h"
 #include "frame.h"
-//#include "scale.h"
+#include "scale.h"
 #include "pixelate.h"
 
 int main()
@@ -68,19 +68,18 @@ int main()
   }
   writeImage("taskD.pgm", out, h, w);
 
-  /*
+  
   // Task E
   readImage("inImage.pgm", img, h, w);
-  int* result[h][w];
-  result = scale("inImage.pgm", img, h, w);
-
-  for(int row = 0; row < h; row++) {
-    for(int col = 0; col < w; col++) {
-      out[row][col] = result*[row][col];
+  scale("inImage.pgm", img, h, w);
+  
+  for(int row = 0; row < h*2; row++) {
+    for(int col = 0; col < w*2; col++) {
+      out[row][col] = img[row][col];
     }
-  }
-  writeImage("taskE.pgm", out, h, w);
-  */
+  }  
+  writeImage("taskE.pgm", out, h*2, w*2);
+  
 
   // Task F
   readImage(input, img, h, w);
